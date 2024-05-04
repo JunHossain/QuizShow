@@ -38,7 +38,7 @@ public class Difficulty extends javax.swing.JFrame {
         nameBox = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         difficultyDropDownMenu = new javax.swing.JComboBox<>();
-        nextButton = new javax.swing.JButton();
+        quizStartButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -58,12 +58,12 @@ public class Difficulty extends javax.swing.JFrame {
             }
         });
 
-        nextButton.setBackground(new java.awt.Color(102, 255, 102));
-        nextButton.setFont(new java.awt.Font("Nirmala UI", 1, 24)); // NOI18N
-        nextButton.setText("Next");
-        nextButton.addActionListener(new java.awt.event.ActionListener() {
+        quizStartButton.setBackground(new java.awt.Color(102, 255, 102));
+        quizStartButton.setFont(new java.awt.Font("Nirmala UI", 1, 24)); // NOI18N
+        quizStartButton.setText("Quiz Start");
+        quizStartButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nextButtonActionPerformed(evt);
+                quizStartButtonActionPerformed(evt);
             }
         });
 
@@ -76,19 +76,19 @@ public class Difficulty extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(nameBox, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(292, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(233, 233, 233)
-                .addComponent(difficultyDropDownMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(253, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(nextButton)
-                .addGap(134, 134, 134))
+                .addComponent(quizStartButton)
+                .addGap(80, 80, 80))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(difficultyDropDownMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(239, 239, 239))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -104,9 +104,9 @@ public class Difficulty extends javax.swing.JFrame {
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(difficultyDropDownMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(60, 60, 60)
-                .addComponent(nextButton)
-                .addContainerGap(93, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                .addComponent(quizStartButton)
+                .addGap(95, 95, 95))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -127,11 +127,11 @@ public class Difficulty extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_difficultyDropDownMenuActionPerformed
 
-    private void nextButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextButtonActionPerformed
+    private void quizStartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quizStartButtonActionPerformed
         this.dispose();
         String selectedDifficulty = (String) difficultyDropDownMenu.getSelectedItem();
         new GameStage(temp, selectedDifficulty).setVisible(true);
-    }//GEN-LAST:event_nextButtonActionPerformed
+    }//GEN-LAST:event_quizStartButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -174,6 +174,6 @@ public class Difficulty extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel nameBox;
-    private javax.swing.JButton nextButton;
+    private javax.swing.JButton quizStartButton;
     // End of variables declaration//GEN-END:variables
 }
