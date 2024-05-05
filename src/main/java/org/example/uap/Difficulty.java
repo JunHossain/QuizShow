@@ -14,6 +14,7 @@ public class Difficulty extends javax.swing.JFrame {
      * Creates new form Difficulty
      */
     String temp;
+    String unga;
     public Difficulty() {
         
     }
