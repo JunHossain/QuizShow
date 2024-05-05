@@ -20,7 +20,7 @@ public class GameStage extends javax.swing.JFrame {
     /**
      * Creates new form GameStage
      */
-    private String playerName;
+    private String playerName = new String();
     private String difficultyLevel;
     private BufferedReader questionReader;
     private List<Question> questions;
