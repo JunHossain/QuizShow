@@ -4,6 +4,8 @@
  */
 package org.example.uap;
 
+import java.io.IOException;
+
 /**
  *
  * @author User
@@ -66,7 +68,11 @@ public class Difficulty extends javax.swing.JFrame {
         quizStartButton.setText("Quiz Start");
         quizStartButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                quizStartButtonActionPerformed(evt);
+                try {
+                    quizStartButtonActionPerformed(evt);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
             }
         });
 
@@ -137,7 +143,7 @@ public class Difficulty extends javax.swing.JFrame {
         // TODO add your handling code here:
     }// GEN-LAST:event_difficultyDropDownMenuActionPerformed
 
-    private void quizStartButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_quizStartButtonActionPerformed
+    private void quizStartButtonActionPerformed(java.awt.event.ActionEvent evt) throws IOException {// GEN-FIRST:event_quizStartButtonActionPerformed
         this.dispose();
         String selectedDifficulty = (String) difficultyDropDownMenu.getSelectedItem();
         new GameStage(temp, selectedDifficulty).setVisible(true);

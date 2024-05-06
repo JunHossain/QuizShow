@@ -20,26 +20,21 @@ public class GameStage extends javax.swing.JFrame {
     /**
      * Creates new form GameStage
      */
-    private String playerName = new String();
+    private String playerName;
     private String difficultyLevel;
-    private BufferedReader questionReader;
-    private List<Question> questions;
-    private int currentQuestionIndex;
-    
+
     public GameStage() {
 
     }
-    public GameStage(String playerName, String difficultyLevel) {
+    public GameStage(String playerName, String difficultyLevel) throws IOException {
         initComponents();
         this.playerName = playerName;
         this.difficultyLevel = difficultyLevel;
-        
-        questions = new ArrayList<>();
-        currentQuestionIndex = -1;
-        System.out.println(difficultyLevel.toLowerCase()+".txt");
-        String fileName = difficultyLevel.toLowerCase() + ".txt";
-        loadQuestions(fileName);
+        System.out.println(playerName + " " + this.playerName);
+        questionLabel.setText(new Question().print(difficultyLevel));
+        playerNameLabel.setText("Player: " + playerName);
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -51,18 +46,11 @@ public class GameStage extends javax.swing.JFrame {
     private void initComponents() {
 
         playerNameLabel = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        questionTextArea = new javax.swing.JTextArea();
         nextButton = new javax.swing.JButton();
         resetButton = new javax.swing.JButton();
+        questionLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        playerNameLabel.setText("Player: " + playerName);
-
-        questionTextArea.setColumns(20);
-        questionTextArea.setRows(5);
-        jScrollPane1.setViewportView(questionTextArea);
 
         nextButton.setText("NEXT");
         nextButton.addActionListener(new java.awt.event.ActionListener() {
@@ -82,27 +70,25 @@ public class GameStage extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(129, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1025, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(126, 126, 126))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(280, 280, 280)
-                .addComponent(playerNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 793, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addComponent(resetButton, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(nextButton, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(180, 180, 180)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(questionLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 893, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(playerNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 793, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(207, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(67, 67, 67)
                 .addComponent(playerNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(71, 71, 71)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 317, Short.MAX_VALUE)
+                .addGap(76, 76, 76)
+                .addComponent(questionLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 336, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(resetButton, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(nextButton, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -118,7 +104,11 @@ public class GameStage extends javax.swing.JFrame {
     }//GEN-LAST:event_resetButtonActionPerformed
 
     private void nextButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextButtonActionPerformed
-        loadNextQuestion();
+        try {
+            questionLabel.setText(new Question().print(difficultyLevel));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }//GEN-LAST:event_nextButtonActionPerformed
 
     /**
@@ -157,58 +147,11 @@ public class GameStage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton nextButton;
     private javax.swing.JLabel playerNameLabel;
-    private javax.swing.JTextArea questionTextArea;
+    private javax.swing.JLabel questionLabel;
     private javax.swing.JButton resetButton;
     // End of variables declaration//GEN-END:variables
 
-    private void loadQuestions(String fileName) {
-        try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
-            String line;
-            StringBuilder questionText = new StringBuilder();
-            List<String> options = new ArrayList<>();
-            String answer = "";
 
-            while ((line = br.readLine()) != null) {
-                if (line.trim().isEmpty()) {
-                    continue;
-                }
-
-                if (line.matches("\\d+.*")) {
-                    // New question block
-                    if (!questionText.toString().isEmpty()) {
-                        // Add previous question to the list
-                        questions.add(new Question(questionText.toString(), options, answer));
-                        options.clear();
-                    }
-                    questionText = new StringBuilder(line);
-                } else if (line.matches("[a-d].*")) {
-                    // Option line
-                    options.add(line);
-                } else {
-                    // Answer line
-                    answer = line;
-                }
-            }
-
-            // Add the last question to the list
-            questions.add(new Question(questionText.toString(), options, answer));
-        } catch (IOException e) {
-            e.printStackTrace(); // Handle file reading errors
-        }
-    }
-
-    private void loadNextQuestion() {
-        currentQuestionIndex++;
-        if (currentQuestionIndex < questions.size()) {
-            Question nextQuestion = questions.get(currentQuestionIndex);
-            // Display the next question and options
-            // Code for displaying the question and options
-        } else {
-            // End of questions
-            // Code for displaying end of quiz
-        }
-    }
 }
