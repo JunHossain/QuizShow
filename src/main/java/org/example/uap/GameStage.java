@@ -30,7 +30,6 @@ public class GameStage extends javax.swing.JFrame {
         initComponents();
         this.playerName = playerName;
         this.difficultyLevel = difficultyLevel;
-        System.out.println(playerName + " " + this.playerName);
         questionLabel.setText(new Question().print(difficultyLevel));
         playerNameLabel.setText("Player: " + playerName);
     }
