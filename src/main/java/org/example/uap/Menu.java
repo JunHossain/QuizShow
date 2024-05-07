@@ -39,6 +39,7 @@ public class Menu extends javax.swing.JFrame {
         jPanel1.setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Algerian", 0, 48)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(51, 51, 51));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Quiz Show");
         jPanel1.add(jLabel1);
@@ -46,6 +47,7 @@ public class Menu extends javax.swing.JFrame {
 
         PLAY.setBackground(new java.awt.Color(0, 204, 153));
         PLAY.setFont(new java.awt.Font("Algerian", 0, 14)); // NOI18N
+        PLAY.setForeground(new java.awt.Color(51, 51, 51));
         PLAY.setText("PLAY");
         PLAY.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -57,6 +59,7 @@ public class Menu extends javax.swing.JFrame {
 
         EXIT.setBackground(new java.awt.Color(0, 204, 153));
         EXIT.setFont(new java.awt.Font("Algerian", 0, 14)); // NOI18N
+        EXIT.setForeground(new java.awt.Color(51, 51, 51));
         EXIT.setText("EXIT");
         EXIT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
