@@ -8,7 +8,6 @@ import java.awt.*;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.nio.file.FileAlreadyExistsException;
 import java.util.Objects;
 import javax.swing.*;
 
@@ -33,7 +32,7 @@ public class GameStage extends javax.swing.JFrame {
 
     }
 
-    public GameStage(String playerName, String difficultyLevel) throws IOException {
+    public GameStage(String playerName, String difficultyLevel) throws IOException, FontFormatException {
         initComponents();
         this.playerName = playerName;
         this.difficultyLevel = difficultyLevel;
@@ -158,8 +157,8 @@ public class GameStage extends javax.swing.JFrame {
             }
         });
 
+        answerValidityLabel.setBackground(new java.awt.Color(51, 255, 51));
         answerValidityLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        answerValidityLabel.setText("jLabel1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -239,13 +238,8 @@ public class GameStage extends javax.swing.JFrame {
     }//GEN-LAST:event_optionCButtonActionPerformed
 
     private void lockButtonActionPerformed(java.awt.event.ActionEvent evt) throws IOException {//GEN-FIRST:event_lockButtonActionPerformed
-        if(lockedIn){
             lockButton.setEnabled(false);
             nextButton.setEnabled(true);
-        }else{
-            lockedIn = true;
-            lockButton.setEnabled(false);
-            nextButton.setEnabled(false);
             totalQuestionsAsked++;
             System.out.println(selectedButton.getText());
             System.out.println(question.getCorrectAnswer(difficultyLevel));
@@ -254,15 +248,18 @@ public class GameStage extends javax.swing.JFrame {
             }
             scoreLabel.setText("Score: " + correctAnswers + "/" + totalQuestionsAsked + "/" + NUMBER_OF_TOTAL_QUESTIONS);
             answerConfirmationLabel();
-        }
+
     }//GEN-LAST:event_lockButtonActionPerformed
 
     private void answerConfirmationLabel() throws IOException {
         if(Objects.equals(selectedButton.getText(), question.getCorrectAnswer(difficultyLevel))){
             answerValidityLabel.setText("Correct Answer");
-            answerValidityLabel.setFont(new Font("Verdana", Font.PLAIN, 18));
+            answerValidityLabel.setFont(new Font("Gabriola", Font.PLAIN, 45));
+            answerValidityLabel.setForeground(new java.awt.Color(51, 255, 51));
         }else{
             answerValidityLabel.setText("Wrong Answer");
+            answerValidityLabel.setFont(new Font("Gabriola", Font.PLAIN, 45));
+            answerValidityLabel.setForeground(new java.awt.Color(255, 0, 51));
         }
     }
 
@@ -277,8 +274,9 @@ public class GameStage extends javax.swing.JFrame {
             questionLabel.setText(question.print(difficultyLevel));
             loadOptions(difficultyLevel);
             optionsButtonGroup.clearSelection();
-            lockedIn = false;
+            nextButton.setEnabled(false);
             lockButton.setEnabled(true);
+            answerValidityLabel.setText("");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
