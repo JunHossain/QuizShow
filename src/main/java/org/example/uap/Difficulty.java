@@ -4,6 +4,7 @@
  */
 package org.example.uap;
 
+import java.awt.*;
 import java.io.IOException;
 
 /**
@@ -70,7 +71,7 @@ public class Difficulty extends javax.swing.JFrame {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 try {
                     quizStartButtonActionPerformed(evt);
-                } catch (IOException e) {
+                } catch (IOException | FontFormatException e) {
                     throw new RuntimeException(e);
                 }
             }
@@ -143,7 +144,7 @@ public class Difficulty extends javax.swing.JFrame {
         // TODO add your handling code here:
     }// GEN-LAST:event_difficultyDropDownMenuActionPerformed
 
-    private void quizStartButtonActionPerformed(java.awt.event.ActionEvent evt) throws IOException {// GEN-FIRST:event_quizStartButtonActionPerformed
+    private void quizStartButtonActionPerformed(java.awt.event.ActionEvent evt) throws IOException, FontFormatException {// GEN-FIRST:event_quizStartButtonActionPerformed
         this.dispose();
         String selectedDifficulty = (String) difficultyDropDownMenu.getSelectedItem();
         new GameStage(temp, selectedDifficulty).setVisible(true);
