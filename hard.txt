@@ -1,70 +1,70 @@
 In the context of digital computer, which of the following pairs of digits is referred to as binary code ?
-a. 3 and 4
-b. 0 and 1
-c. 2 and 3
-d. 1 and 2
-Ans: 0 and 1
+3 and 4
+0 and 1
+2 and 3
+1 and 2
+0 and 1
 
 What is the full form of PROM ?
-a. Program read-only memory
-b. Primary read-only memory 
-c. Programmable read-only memory 
-d. Program read-output memory 
-Ans: Programmable read-only memory 
+Program read-only memory
+Primary read-only memory 
+Programmable read-only memory 
+Program read-output memory 
+Programmable read-only memory 
 
 What is the chemical formula for the compound commonly known as baking soda?
-a. NaOH
-b. H2CO3
-c. Na2CO3
-d. NaHCO3
-Ans: NaHCO3
+NaOH
+H2CO3
+Na2CO3
+NaHCO3
+NaHCO3
 
 In a right triangle, if one acute angle measures 30 degrees, what is the measure of the other acute angle in degrees?
-a. 45
-b. 60
-c. 90
-d. 120
-Ans: 60
+45
+60
+90
+120
+60
 
 Which company developed the first commercially successful microprocessor, the Intel 4004, in 1971?
-a. IBM
-b. Intel
-c. Microsoft
-d. Apple
-Ans: Intel
+IBM
+Intel
+Microsoft
+Apple
+Intel
 
 Which country has the highest population density in the world?
-a. Monaco
-b. Singapore
-c. Bangladesh
-d. Vatican City
-Ans: Bangladesh
+Monaco
+Singapore
+Bangladesh
+Vatican City
+Bangladesh
 
 Which organization oversees the registration of political parties in Bangladesh?
-a. Election Commission
-b. Parliament
-c. Supreme Court
-d. Ministry of Home Affairs
-Ans: Election Commission
+Election Commission
+Parliament
+Supreme Court
+Ministry of Home Affairs
+Election Commission
 
 What is the value of the mathematical constant "π" rounded to 10 decimal places?
-a. 3.1415926535
-b. 3.1415926536
-c. 3.141592654
-d. 3.1415926545
-Ans: 3.1415926535
+3.1415926535
+3.1415926536
+3.141592654
+3.1415926545
+3.1415926535
 
 Which programming language is primarily used for developing artificial intelligence and machine learning applications?
-a. Python
-b. Java
-c. C++
-d. Ruby
-Ans: Python
+Python
+Java
+C++
+Ruby
+Python
 
 Which European country is known as the "Land of a Thousand Lakes"?
-a. Finland
-b. Sweden
-c. Norway
-d. Denmark
-Ans: Finland
+Finland
+Sweden
+Norway
+Denmark
+Finland
 
