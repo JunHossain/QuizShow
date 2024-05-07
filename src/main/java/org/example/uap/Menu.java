@@ -26,59 +26,50 @@ public class Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jColorChooser1 = new javax.swing.JColorChooser();
+        jColorChooser2 = new javax.swing.JColorChooser();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         PLAY = new javax.swing.JButton();
         EXIT = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Yu Gothic UI", 1, 36)); // NOI18N
+        jPanel1.setLayout(null);
+
+        jLabel1.setFont(new java.awt.Font("Algerian", 0, 48)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Quiz Show");
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(30, 130, 330, 50);
 
-        PLAY.setFont(new java.awt.Font("Dialog", 1, 24));
+        PLAY.setBackground(new java.awt.Color(0, 204, 153));
+        PLAY.setFont(new java.awt.Font("Algerian", 0, 14)); // NOI18N
         PLAY.setText("PLAY");
         PLAY.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PLAYActionPerformed(evt);
             }
         });
+        jPanel1.add(PLAY);
+        PLAY.setBounds(260, 240, 72, 50);
 
-        EXIT.setFont(new java.awt.Font("Dialog", 1, 24));
+        EXIT.setBackground(new java.awt.Color(0, 204, 153));
+        EXIT.setFont(new java.awt.Font("Algerian", 0, 14)); // NOI18N
         EXIT.setText("EXIT");
         EXIT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EXITActionPerformed(evt);
             }
         });
+        jPanel1.add(EXIT);
+        EXIT.setBounds(330, 320, 72, 50);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(135, 135, 135)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(293, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(PLAY)
-                    .addComponent(EXIT))
-                .addGap(257, 257, 257))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(60, 60, 60)
-                .addComponent(jLabel1)
-                .addGap(58, 58, 58)
-                .addComponent(PLAY, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(82, 82, 82)
-                .addComponent(EXIT, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(47, Short.MAX_VALUE))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/green-pencils-metal-binder-clips-paper-high-view_23-2148362187.jpg"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(0, 0, 760, 410);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -142,7 +133,10 @@ public class Menu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton EXIT;
     private javax.swing.JButton PLAY;
+    private javax.swing.JColorChooser jColorChooser1;
+    private javax.swing.JColorChooser jColorChooser2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
