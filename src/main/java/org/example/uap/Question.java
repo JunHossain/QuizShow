@@ -17,6 +17,8 @@ public class Question {
     private String questionText;
     private String[] options;
     private String correctAnswer;
+    private final int[] numbers = {1, 8, 15, 22, 29, 36, 43, 50, 57, 64};
+    private int randomIndex;
     private int lineNumber;
 
     public int getLineNumber() {
@@ -28,20 +30,34 @@ public class Question {
     }
 
     private int randomNumberGenerator() {
-        int[] numbers = {1, 8, 15, 22, 29, 36, 43, 50, 57, 64};
         Random rng = new Random();
-        int randomIndex = rng.nextInt(numbers.length);
+        randomIndex = rng.nextInt(numbers.length);
         return numbers[randomIndex];
     }
 
     public String print(String difficultyLevel) throws IOException {
         BufferedReader in = new BufferedReader(new FileReader(difficultyLevel + ".txt"));
-        String line = null;
+        String line;
         lineNumber = randomNumberGenerator();
         int currentLineNumber = 0;
         while ((line = in.readLine()) != null) {
             currentLineNumber++;
             if (currentLineNumber == lineNumber) {
+                in.close();
+                return line;
+            }
+        }
+        in.close();
+        return null;
+    }
+
+    public String getCorrectAnswer(String difficultyLevel) throws IOException{
+        BufferedReader in = new BufferedReader(new FileReader(difficultyLevel + ".txt"));
+        String line = null;
+        int currentLineNumber = 0;
+        while ((line = in.readLine()) != null) {
+            currentLineNumber++;
+            if (currentLineNumber == numbers[randomIndex]+5) {
                 in.close();
                 return line;
             }
