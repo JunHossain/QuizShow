@@ -17,6 +17,11 @@ public class Question {
     private String questionText;
     private String[] options;
     private String correctAnswer;
+    private int lineNumber;
+
+    public int getLineNumber() {
+        return lineNumber;
+    }
 
     public Question() {
 
@@ -32,7 +37,7 @@ public class Question {
     public String print(String difficultyLevel) throws IOException {
         BufferedReader in = new BufferedReader(new FileReader(difficultyLevel + ".txt"));
         String line = null;
-        int lineNumber = randomNumberGenerator();
+        lineNumber = randomNumberGenerator();
         int currentLineNumber = 0;
         while ((line = in.readLine()) != null) {
             currentLineNumber++;

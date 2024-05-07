@@ -9,7 +9,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import javax.swing.JOptionPane;
+import javax.swing.*;
 
 /**
  *
@@ -22,6 +22,7 @@ public class GameStage extends javax.swing.JFrame {
      */
     private String playerName;
     private String difficultyLevel;
+    Question question = new Question();
 
     public GameStage() {
 
@@ -30,23 +31,33 @@ public class GameStage extends javax.swing.JFrame {
         initComponents();
         this.playerName = playerName;
         this.difficultyLevel = difficultyLevel;
-        questionLabel.setText(new Question().print(difficultyLevel));
+        questionLabel.setText(question.print(difficultyLevel));
         playerNameLabel.setText("Player: " + playerName);
+        loadOptions(difficultyLevel);
     }
 
-    public void loadOptions(String difficultyLevel) throws IOException{
+    public void loadOptions(String difficultyLevel) throws IOException {
         BufferedReader in = new BufferedReader(new FileReader(difficultyLevel + ".txt"));
-        String line = null;
-        int currentLineNumber = 1;
+        String line;
+        int currentLineNumber = 0;
+        int lineNumber = question.getLineNumber();
         while ((line = in.readLine()) != null) {
             currentLineNumber++;
-            if (currentLineNumber == lineNumber) {
-                in.close();
-                return line;
+            if (currentLineNumber == lineNumber + 1) {
+
+                optionAButton.setText(line);
+            } else if (currentLineNumber == lineNumber + 2) {
+
+                optionBButton.setText(line);
+            } else if (currentLineNumber == lineNumber + 3) {
+
+                optionCButton.setText(line);
+            } else if (currentLineNumber == lineNumber + 4) {
+
+                optionDButton.setText(line);
             }
         }
         in.close();
-        return null;
     }
     
 
@@ -59,16 +70,19 @@ public class GameStage extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        optionsButtonGroup = new javax.swing.ButtonGroup();
         playerNameLabel = new javax.swing.JLabel();
         nextButton = new javax.swing.JButton();
         resetButton = new javax.swing.JButton();
         questionLabel = new javax.swing.JLabel();
-        optionALabel = new javax.swing.JLabel();
-        optionCLabel = new javax.swing.JLabel();
-        optionBLabel = new javax.swing.JLabel();
-        optionDLabel = new javax.swing.JLabel();
+        optionBButton = new javax.swing.JRadioButton();
+        optionCButton = new javax.swing.JRadioButton();
+        optionAButton = new javax.swing.JRadioButton();
+        optionDButton = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        playerNameLabel.setText("player");
 
         nextButton.setText("NEXT");
         nextButton.addActionListener(new java.awt.event.ActionListener() {
@@ -84,15 +98,36 @@ public class GameStage extends javax.swing.JFrame {
             }
         });
 
-        questionLabel.setFont(new java.awt.Font("Oxanium SemiBold", 1, 48)); // NOI18N
+        questionLabel.setFont(new java.awt.Font("Oxanium SemiBold", 1, 24)); // NOI18N
+        questionLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        questionLabel.setText("question");
 
-        optionALabel.setText("jLabel1");
+        optionsButtonGroup.add(optionBButton);
+        optionBButton.setText("jRadioButton1");
+        optionBButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                optionBButtonActionPerformed(evt);
+            }
+        });
 
-        optionCLabel.setText("jLabel1");
+        optionsButtonGroup.add(optionCButton);
+        optionCButton.setText("jRadioButton1");
 
-        optionBLabel.setText("jLabel1");
+        optionsButtonGroup.add(optionAButton);
+        optionAButton.setText("jRadioButton1");
+        optionAButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                optionAButtonActionPerformed(evt);
+            }
+        });
 
-        optionDLabel.setText("jLabel1");
+        optionsButtonGroup.add(optionDButton);
+        optionDButton.setText("jRadioButton1");
+        optionDButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                optionDButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -103,40 +138,48 @@ public class GameStage extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(nextButton, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(layout.createSequentialGroup()
-                .addGap(180, 180, 180)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addComponent(optionALabel, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(optionBLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(questionLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 893, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(playerNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 793, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(180, 180, 180)
+                            .addComponent(playerNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 793, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addGap(314, 314, 314)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(optionAButton)
+                                .addComponent(optionCButton))
+                            .addGap(445, 445, 445)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(optionBButton)
+                                .addComponent(optionDButton))))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(optionCLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(optionDLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(207, Short.MAX_VALUE))
+                        .addGap(110, 110, 110)
+                        .addComponent(questionLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 1121, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(175, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(67, 67, 67)
+                .addGap(73, 73, 73)
                 .addComponent(playerNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(76, 76, 76)
+                .addGap(70, 70, 70)
                 .addComponent(questionLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(optionALabel, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(optionBLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(36, 36, 36)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(optionDLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(optionCLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(resetButton, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(nextButton, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(optionBButton, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(optionAButton, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(53, 53, 53)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(optionDButton, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(optionCButton, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 258, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(resetButton, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nextButton, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap())
         );
 
@@ -150,11 +193,24 @@ public class GameStage extends javax.swing.JFrame {
 
     private void nextButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextButtonActionPerformed
         try {
-            questionLabel.setText(new Question().print(difficultyLevel));
+            questionLabel.setText(question.print(difficultyLevel));
+            loadOptions(difficultyLevel);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }//GEN-LAST:event_nextButtonActionPerformed
+
+    private void optionBButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optionBButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_optionBButtonActionPerformed
+
+    private void optionDButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optionDButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_optionDButtonActionPerformed
+
+    private void optionAButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optionAButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_optionAButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -193,14 +249,13 @@ public class GameStage extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton nextButton;
-    private javax.swing.JLabel optionALabel;
-    private javax.swing.JLabel optionBLabel;
-    private javax.swing.JLabel optionCLabel;
-    private javax.swing.JLabel optionDLabel;
+    private javax.swing.JRadioButton optionAButton;
+    private javax.swing.JRadioButton optionBButton;
+    private javax.swing.JRadioButton optionCButton;
+    private javax.swing.JRadioButton optionDButton;
+    private javax.swing.ButtonGroup optionsButtonGroup;
     private javax.swing.JLabel playerNameLabel;
     private javax.swing.JLabel questionLabel;
     private javax.swing.JButton resetButton;
     // End of variables declaration//GEN-END:variables
-
-
 }
