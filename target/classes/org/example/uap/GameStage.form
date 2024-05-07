@@ -28,11 +28,23 @@
               <EmptySpace max="32767" attributes="0"/>
               <Component id="nextButton" min="-2" pref="127" max="-2" attributes="0"/>
           </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="180" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="questionLabel" alignment="1" min="-2" pref="893" max="-2" attributes="0"/>
-                  <Component id="playerNameLabel" min="-2" pref="793" max="-2" attributes="0"/>
+          <Group type="102" attributes="0">
+              <EmptySpace min="180" pref="180" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="optionALabel" min="-2" pref="82" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="optionBLabel" min="-2" pref="82" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                      <Component id="questionLabel" alignment="1" min="-2" pref="893" max="-2" attributes="0"/>
+                      <Component id="playerNameLabel" min="-2" pref="793" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Component id="optionCLabel" min="-2" pref="82" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="optionDLabel" min="-2" pref="82" max="-2" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace pref="207" max="32767" attributes="0"/>
           </Group>
@@ -45,7 +57,17 @@
               <Component id="playerNameLabel" min="-2" pref="63" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
               <Component id="questionLabel" min="-2" pref="173" max="-2" attributes="0"/>
-              <EmptySpace pref="336" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="optionALabel" alignment="3" min="-2" pref="78" max="-2" attributes="0"/>
+                  <Component id="optionBLabel" alignment="3" min="-2" pref="78" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="optionDLabel" alignment="3" min="-2" pref="78" max="-2" attributes="0"/>
+                  <Component id="optionCLabel" alignment="3" min="-2" pref="78" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="120" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="resetButton" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
                   <Component id="nextButton" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
@@ -75,6 +97,31 @@
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="questionLabel">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Oxanium SemiBold" size="48" style="1"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="optionALabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel1"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="optionCLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel1"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="optionBLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel1"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="optionDLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel1"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

@@ -42,7 +42,7 @@ public class Question {
             }
         }
         in.close();
-        return null; // Line number not found
+        return null;
     }
 }
 
