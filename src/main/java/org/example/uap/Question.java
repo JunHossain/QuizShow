@@ -11,32 +11,35 @@ import java.util.List;
 import java.util.Random;
 
 /**
- *
  * @author User
  */
 public class Question {
     private String questionText;
     private String[] options;
     private String correctAnswer;
+    private int lineNumber;
+
+    public int getLineNumber() {
+        return lineNumber;
+    }
 
     public Question() {
 
     }
-    
-    private int randomNumberGenerator(){
+
+    private int randomNumberGenerator() {
         int[] numbers = {1, 8, 15, 22, 29, 36, 43, 50, 57, 64};
         Random rng = new Random();
         int randomIndex = rng.nextInt(numbers.length);
         return numbers[randomIndex];
     }
 
-    public String print(String difficultyLevel) throws IOException
-    {
-        BufferedReader in = new BufferedReader(new FileReader(difficultyLevel+ ".txt"));
+    public String print(String difficultyLevel) throws IOException {
+        BufferedReader in = new BufferedReader(new FileReader(difficultyLevel + ".txt"));
         String line = null;
-        int lineNumber = randomNumberGenerator();
+        lineNumber = randomNumberGenerator();
         int currentLineNumber = 0;
-        while((line = in.readLine()) != null){
+        while ((line = in.readLine()) != null) {
             currentLineNumber++;
             if (currentLineNumber == lineNumber) {
                 in.close();
@@ -44,7 +47,7 @@ public class Question {
             }
         }
         in.close();
-        return null; // Line number not found
+        return null;
     }
 }
 
