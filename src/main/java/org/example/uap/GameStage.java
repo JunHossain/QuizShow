@@ -4,12 +4,11 @@
  */
 package org.example.uap;
 
-import java.awt.event.MouseEvent;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import java.nio.file.FileAlreadyExistsException;
+import java.util.Objects;
 import javax.swing.*;
 
 /**
@@ -25,6 +24,8 @@ public class GameStage extends javax.swing.JFrame {
     private int correctAnswers = 0;
     private String playerName;
     private String difficultyLevel;
+    JRadioButton selectedButton;
+    private Boolean lockedIn = false;
     Question question = new Question();
 
     public GameStage() {
@@ -84,6 +85,7 @@ public class GameStage extends javax.swing.JFrame {
         optionAButton = new javax.swing.JRadioButton();
         optionDButton = new javax.swing.JRadioButton();
         scoreLabel = new javax.swing.JLabel();
+        lockButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -117,6 +119,11 @@ public class GameStage extends javax.swing.JFrame {
 
         optionsButtonGroup.add(optionCButton);
         optionCButton.setText("jRadioButton1");
+        optionCButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                optionCButtonActionPerformed(evt);
+            }
+        });
 
         optionsButtonGroup.add(optionAButton);
         optionAButton.setText("jRadioButton1");
@@ -136,6 +143,18 @@ public class GameStage extends javax.swing.JFrame {
 
         scoreLabel.setText("Score: ");
 
+        lockButton.setBackground(new java.awt.Color(255, 255, 102));
+        lockButton.setText("Lock");
+        lockButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                try {
+                    lockButtonActionPerformed(evt);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -146,15 +165,6 @@ public class GameStage extends javax.swing.JFrame {
                 .addComponent(nextButton, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(314, 314, 314)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(optionAButton)
-                            .addComponent(optionCButton))
-                        .addGap(445, 445, 445)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(optionBButton)
-                            .addComponent(optionDButton)))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                             .addGap(193, 193, 193)
@@ -163,7 +173,19 @@ public class GameStage extends javax.swing.JFrame {
                             .addComponent(scoreLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                             .addGap(110, 110, 110)
-                            .addComponent(questionLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 1121, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(questionLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 1121, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(314, 314, 314)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lockButton)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(optionAButton)
+                                    .addComponent(optionCButton))
+                                .addGap(445, 445, 445)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(optionBButton)
+                                    .addComponent(optionDButton))))))
                 .addContainerGap(175, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -185,7 +207,9 @@ public class GameStage extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(optionDButton, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(optionCButton, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 258, Short.MAX_VALUE))
+                        .addGap(85, 85, 85)
+                        .addComponent(lockButton)
+                        .addGap(0, 150, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -196,6 +220,29 @@ public class GameStage extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void optionCButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optionCButtonActionPerformed
+        if(optionCButton.isSelected()){
+            selectedButton = optionCButton;
+        }
+    }//GEN-LAST:event_optionCButtonActionPerformed
+
+    private void lockButtonActionPerformed(java.awt.event.ActionEvent evt) throws IOException {//GEN-FIRST:event_lockButtonActionPerformed
+        if(lockedIn){
+            lockButton.setEnabled(false);
+            nextButton.setEnabled(true);
+        }else{
+            lockedIn = true;
+            nextButton.setEnabled(false);
+            totalQuestionsAsked++;
+            System.out.println(selectedButton.getText());
+            System.out.println(question.getCorrectAnswer(difficultyLevel));
+            if(Objects.equals(selectedButton.getText(), question.getCorrectAnswer(difficultyLevel))){
+                correctAnswers++;
+            }
+            scoreLabel.setText("Score: " + correctAnswers + "/" + totalQuestionsAsked + "/" + NUMBER_OF_TOTAL_QUESTIONS);
+        }
+    }//GEN-LAST:event_lockButtonActionPerformed
 
 
     private void resetButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_resetButtonActionPerformed
@@ -208,27 +255,29 @@ public class GameStage extends javax.swing.JFrame {
             questionLabel.setText(question.print(difficultyLevel));
             loadOptions(difficultyLevel);
             optionsButtonGroup.clearSelection();
-            totalQuestionsAsked++;
-            ButtonModel selectedButtonModel = optionsButtonGroup.getSelection();
-            if (selectedButtonModel.getActionCommand() == question.getCorrectAnswer(difficultyLevel)) {
-                correctAnswers++;
-            }
-            scoreLabel.setText("Score: " + correctAnswers + "/" + totalQuestionsAsked + "/" + NUMBER_OF_TOTAL_QUESTIONS);
+            lockedIn = false;
+            lockButton.setEnabled(true);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }// GEN-LAST:event_nextButtonActionPerformed
 
     private void optionBButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_optionBButtonActionPerformed
-
+        if (optionBButton.isSelected()) {
+            selectedButton = optionBButton;
+        }
     }// GEN-LAST:event_optionBButtonActionPerformed
 
     private void optionDButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_optionDButtonActionPerformed
-        // TODO add your handling code here:
+        if (optionDButton.isSelected()) {
+            selectedButton = optionDButton;
+        }
     }// GEN-LAST:event_optionDButtonActionPerformed
 
     private void optionAButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_optionAButtonActionPerformed
-
+        if (optionAButton.isSelected()) {
+            selectedButton = optionAButton;
+        }
     }// GEN-LAST:event_optionAButtonActionPerformed
 
     /**
@@ -271,6 +320,7 @@ public class GameStage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton lockButton;
     private javax.swing.JButton nextButton;
     private javax.swing.JRadioButton optionAButton;
     private javax.swing.JRadioButton optionBButton;

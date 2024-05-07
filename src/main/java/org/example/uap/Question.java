@@ -14,9 +14,6 @@ import java.util.Random;
  * @author User
  */
 public class Question {
-    private String questionText;
-    private String[] options;
-    private String correctAnswer;
     private final int[] numbers = {1, 8, 15, 22, 29, 36, 43, 50, 57, 64};
     private int randomIndex;
     private int lineNumber;
@@ -53,7 +50,7 @@ public class Question {
 
     public String getCorrectAnswer(String difficultyLevel) throws IOException{
         BufferedReader in = new BufferedReader(new FileReader(difficultyLevel + ".txt"));
-        String line = null;
+        String line;
         int currentLineNumber = 0;
         while ((line = in.readLine()) != null) {
             currentLineNumber++;
