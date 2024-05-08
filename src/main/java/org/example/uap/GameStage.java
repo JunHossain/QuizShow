@@ -87,11 +87,18 @@ public class GameStage extends javax.swing.JFrame {
         scoreLabel = new javax.swing.JLabel();
         lockButton = new javax.swing.JButton();
         answerValidityLabel = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
 
         playerNameLabel.setText("player");
+        getContentPane().add(playerNameLabel);
+        playerNameLabel.setBounds(168, 69, 268, 63);
 
+        nextButton.setBackground(new java.awt.Color(0, 204, 153));
+        nextButton.setFont(new java.awt.Font("Algerian", 0, 18)); // NOI18N
+        nextButton.setForeground(new java.awt.Color(51, 51, 51));
         nextButton.setText("NEXT");
         nextButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         nextButton.addActionListener(new java.awt.event.ActionListener() {
@@ -99,17 +106,26 @@ public class GameStage extends javax.swing.JFrame {
                 nextButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(nextButton);
+        nextButton.setBounds(1110, 650, 110, 40);
 
+        resetButton.setBackground(new java.awt.Color(0, 204, 153));
+        resetButton.setFont(new java.awt.Font("Algerian", 0, 18)); // NOI18N
+        resetButton.setForeground(new java.awt.Color(51, 51, 51));
         resetButton.setText("RESET");
         resetButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 resetButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(resetButton);
+        resetButton.setBounds(40, 635, 127, 40);
 
         questionLabel.setFont(new java.awt.Font("Oxanium SemiBold", 1, 24)); // NOI18N
         questionLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         questionLabel.setText("question");
+        getContentPane().add(questionLabel);
+        questionLabel.setBounds(115, 161, 1030, 152);
 
         optionsButtonGroup.add(optionBButton);
         optionBButton.setText("jRadioButton1");
@@ -118,6 +134,8 @@ public class GameStage extends javax.swing.JFrame {
                 optionBButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(optionBButton);
+        optionBButton.setBounds(842, 331, 99, 48);
 
         optionsButtonGroup.add(optionCButton);
         optionCButton.setText("jRadioButton1");
@@ -126,14 +144,28 @@ public class GameStage extends javax.swing.JFrame {
                 optionCButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(optionCButton);
+        optionCButton.setBounds(314, 481, 99, 45);
 
         optionsButtonGroup.add(optionAButton);
         optionAButton.setText("jRadioButton1");
+        optionAButton.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                optionAButtonStateChanged(evt);
+            }
+        });
+        optionAButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                optionAButtonMouseClicked(evt);
+            }
+        });
         optionAButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 optionAButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(optionAButton);
+        optionAButton.setBounds(314, 331, 99, 48);
 
         optionsButtonGroup.add(optionDButton);
         optionDButton.setText("jRadioButton1");
@@ -142,91 +174,34 @@ public class GameStage extends javax.swing.JFrame {
                 optionDButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(optionDButton);
+        optionDButton.setBounds(850, 470, 98, 30);
 
         scoreLabel.setText("Score: ");
+        getContentPane().add(scoreLabel);
+        scoreLabel.setBounds(963, 69, 268, 63);
 
-        lockButton.setBackground(new java.awt.Color(255, 255, 102));
+        lockButton.setBackground(new java.awt.Color(98, 221, 180));
+        lockButton.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         lockButton.setText("Lock");
         lockButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                try {
-                    lockButtonActionPerformed(evt);
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
+                lockButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(lockButton);
+        lockButton.setBounds(320, 580, 72, 23);
 
         answerValidityLabel.setBackground(new java.awt.Color(51, 255, 51));
         answerValidityLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(answerValidityLabel);
+        answerValidityLabel.setBounds(537, 635, 234, 69);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(resetButton, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(nextButton, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addGap(193, 193, 193)
-                            .addComponent(playerNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(scoreLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addGap(110, 110, 110)
-                            .addComponent(questionLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 1121, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(314, 314, 314)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lockButton)
-                                .addGap(151, 151, 151)
-                                .addComponent(answerValidityLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(optionAButton)
-                                    .addComponent(optionCButton))
-                                .addGap(445, 445, 445)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(optionBButton)
-                                    .addComponent(optionDButton))))))
-                .addContainerGap(175, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(69, 69, 69)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(playerNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(scoreLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(74, 74, 74)
-                .addComponent(questionLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(optionBButton, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(optionAButton, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(53, 53, 53)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(optionDButton, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(optionCButton, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(62, 62, 62)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lockButton)
-                            .addComponent(answerValidityLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 127, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(resetButton, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(nextButton, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap())
-        );
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/2316.jpg"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, 0, 1250, 730);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -341,6 +316,7 @@ public class GameStage extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel answerValidityLabel;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JButton lockButton;
     private javax.swing.JButton nextButton;
     private javax.swing.JRadioButton optionAButton;
