@@ -44,20 +44,22 @@ public class Player extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.setLayout(null);
 
         welcomingText.setFont(new java.awt.Font("Algerian", 0, 24)); // NOI18N
         welcomingText.setForeground(new java.awt.Color(51, 51, 51));
         welcomingText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         welcomingText.setText("Insert Name");
-        jPanel1.add(welcomingText, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 198, 60));
+        jPanel1.add(welcomingText);
+        welcomingText.setBounds(190, 140, 198, 60);
 
         nameBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nameBoxActionPerformed(evt);
             }
         });
-        jPanel1.add(nameBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 190, 198, 38));
+        jPanel1.add(nameBox);
+        nameBox.setBounds(210, 190, 198, 38);
 
         nextButton.setBackground(new java.awt.Color(0, 204, 153));
         nextButton.setFont(new java.awt.Font("Algerian", 0, 18)); // NOI18N
@@ -68,13 +70,15 @@ public class Player extends javax.swing.JFrame {
                 nextButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(nextButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 300, 97, 55));
+        jPanel1.add(nextButton);
+        nextButton.setBounds(650, 300, 97, 55);
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/v915-mynt-005.jpg"))); // NOI18N
         jLabel3.setText("jLabel3");
         jLabel3.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 790, 390));
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(0, 0, 790, 390);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
