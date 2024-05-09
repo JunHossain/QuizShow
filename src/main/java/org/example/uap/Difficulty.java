@@ -44,28 +44,26 @@ public class Difficulty extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         difficultyDropDownMenu = new javax.swing.JComboBox<>();
         quizStartButton = new javax.swing.JButton();
+        jLayeredPane1 = new javax.swing.JLayeredPane();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setLayout(null);
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Algerian", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(51, 51, 51));
         jLabel1.setText("Player:");
-        jPanel1.add(jLabel1);
-        jLabel1.setBounds(170, 100, 100, 40);
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 100, 100, 40));
 
         nameBox.setFont(new java.awt.Font("Oxanium SemiBold", 1, 24)); // NOI18N
-        jPanel1.add(nameBox);
-        nameBox.setBounds(280, 100, 132, 31);
+        jPanel1.add(nameBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 100, 132, 31));
 
         jLabel2.setFont(new java.awt.Font("Algerian", 0, 26)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(51, 51, 51));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Difficulty");
-        jPanel1.add(jLabel2);
-        jLabel2.setBounds(160, 170, 160, 50);
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, 160, 50));
 
         difficultyDropDownMenu.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Easy", "Medium", "Hard"}));
         difficultyDropDownMenu.addActionListener(new java.awt.event.ActionListener() {
@@ -73,28 +71,37 @@ public class Difficulty extends javax.swing.JFrame {
                 difficultyDropDownMenuActionPerformed(evt);
             }
         });
-        jPanel1.add(difficultyDropDownMenu);
-        difficultyDropDownMenu.setBounds(170, 220, 154, 34);
+        jPanel1.add(difficultyDropDownMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 220, 154, 34));
 
         quizStartButton.setBackground(new java.awt.Color(0, 204, 153));
         quizStartButton.setFont(new java.awt.Font("Algerian", 0, 24)); // NOI18N
         quizStartButton.setForeground(new java.awt.Color(51, 51, 51));
         quizStartButton.setText("Quiz Start");
-        quizStartButton.addActionListener(new java.awt.event.ActionListener() throws IOException {
+        quizStartButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                
                 quizStartButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(quizStartButton);
-        quizStartButton.setBounds(590, 320, 170, 40);
+        jPanel1.add(quizStartButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 320, 170, 40));
+
+        javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
+        jLayeredPane1.setLayout(jLayeredPane1Layout);
+        jLayeredPane1Layout.setHorizontalGroup(
+            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 802, Short.MAX_VALUE)
+        );
+        jLayeredPane1Layout.setVerticalGroup(
+            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 442, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(jLayeredPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 366, -1, -1));
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/v915-mynt-005.jpg"))); // NOI18N
         jLabel3.setText("jLabel3");
         jLabel3.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jPanel1.add(jLabel3);
-        jLabel3.setBounds(0, 0, 790, 430);
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 790, 430));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -168,6 +175,7 @@ public class Difficulty extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel nameBox;
     private javax.swing.JButton quizStartButton;

@@ -5,7 +5,7 @@ Galileo Galilei
 Nikola Tesla
 Albert Einstein
 
-In the context of computing, a byte is equal to _____ bits ?
+In the context of computing, a byte is equal to _____ bits?
 4
 16
 24
@@ -20,10 +20,10 @@ In what year did the Titanic sink?
 1912
 
 Which of the following devices is NOT used to enter data into a computer ?
-Mouse 
-Keyboard 
-Scanner 
-Monitor 
+Mouse
+Keyboard
+Scanner
+Monitor
 Monitor
 
 What is the smallest bone in the human body?
