@@ -24,19 +24,103 @@
     <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
   </AuxValues>
 
-  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
-    <Property name="useNullLayout" type="boolean" value="true"/>
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace min="963" pref="963" max="-2" attributes="0"/>
+              <Component id="scoreLabel" min="-2" pref="268" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" attributes="0">
+              <EmptySpace min="115" pref="115" max="-2" attributes="0"/>
+              <Component id="questionLabel" min="-2" pref="1030" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" attributes="0">
+              <EmptySpace min="314" pref="314" max="-2" attributes="0"/>
+              <Component id="optionAButton" min="-2" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" attributes="0">
+              <EmptySpace min="320" pref="320" max="-2" attributes="0"/>
+              <Component id="lockButton" min="-2" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" attributes="0">
+              <EmptySpace min="40" pref="40" max="-2" attributes="0"/>
+              <Component id="resetButton" min="-2" pref="127" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" attributes="0">
+              <EmptySpace min="842" pref="842" max="-2" attributes="0"/>
+              <Component id="optionBButton" min="-2" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" attributes="0">
+              <EmptySpace min="314" pref="314" max="-2" attributes="0"/>
+              <Component id="optionCButton" min="-2" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" attributes="0">
+              <EmptySpace min="537" pref="537" max="-2" attributes="0"/>
+              <Component id="answerValidityLabel" min="-2" pref="234" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" attributes="0">
+              <EmptySpace min="850" pref="850" max="-2" attributes="0"/>
+              <Component id="optionDButton" min="-2" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" attributes="0">
+              <EmptySpace min="1110" pref="1110" max="-2" attributes="0"/>
+              <Component id="nextButton" min="-2" pref="110" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" attributes="0">
+              <EmptySpace min="168" pref="168" max="-2" attributes="0"/>
+              <Component id="playerNameLabel" min="-2" pref="268" max="-2" attributes="0"/>
+          </Group>
+          <Component id="jLabel1" min="-2" pref="1250" max="-2" attributes="0"/>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace min="69" pref="69" max="-2" attributes="0"/>
+              <Component id="scoreLabel" min="-2" pref="63" max="-2" attributes="0"/>
+              <EmptySpace min="29" pref="29" max="-2" attributes="0"/>
+              <Component id="questionLabel" min="-2" pref="152" max="-2" attributes="0"/>
+              <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+              <Component id="optionAButton" min="-2" pref="48" max="-2" attributes="0"/>
+              <EmptySpace min="201" pref="201" max="-2" attributes="0"/>
+              <Component id="lockButton" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="32" pref="32" max="-2" attributes="0"/>
+              <Component id="resetButton" min="-2" pref="40" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" attributes="0">
+              <EmptySpace min="331" pref="331" max="-2" attributes="0"/>
+              <Component id="optionBButton" min="-2" pref="48" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" attributes="0">
+              <EmptySpace min="481" pref="481" max="-2" attributes="0"/>
+              <Component id="optionCButton" min="-2" pref="45" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" attributes="0">
+              <EmptySpace min="635" pref="635" max="-2" attributes="0"/>
+              <Component id="answerValidityLabel" min="-2" pref="69" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" attributes="0">
+              <EmptySpace min="470" pref="470" max="-2" attributes="0"/>
+              <Component id="optionDButton" min="-2" pref="30" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" attributes="0">
+              <EmptySpace min="650" pref="650" max="-2" attributes="0"/>
+              <Component id="nextButton" min="-2" pref="40" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" attributes="0">
+              <EmptySpace min="69" pref="69" max="-2" attributes="0"/>
+              <Component id="playerNameLabel" min="-2" pref="63" max="-2" attributes="0"/>
+          </Group>
+          <Component id="jLabel1" min="-2" pref="730" max="-2" attributes="0"/>
+      </Group>
+    </DimensionLayout>
   </Layout>
   <SubComponents>
     <Component class="javax.swing.JLabel" name="playerNameLabel">
       <Properties>
         <Property name="text" type="java.lang.String" value="player"/>
       </Properties>
-      <Constraints>
-        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="168" y="69" width="268" height="63"/>
-        </Constraint>
-      </Constraints>
     </Component>
     <Component class="javax.swing.JButton" name="nextButton">
       <Properties>
@@ -62,11 +146,6 @@
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="GameStage_nextButton"/>
       </AuxValues>
-      <Constraints>
-        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="1110" y="650" width="110" height="40"/>
-        </Constraint>
-      </Constraints>
     </Component>
     <Component class="javax.swing.JButton" name="resetButton">
       <Properties>
@@ -84,11 +163,6 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="resetButtonActionPerformed"/>
       </Events>
-      <Constraints>
-        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="40" y="635" width="127" height="40"/>
-        </Constraint>
-      </Constraints>
     </Component>
     <Component class="javax.swing.JLabel" name="questionLabel">
       <Properties>
@@ -98,11 +172,6 @@
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="question"/>
       </Properties>
-      <Constraints>
-        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="115" y="161" width="1030" height="152"/>
-        </Constraint>
-      </Constraints>
     </Component>
     <Component class="javax.swing.JRadioButton" name="optionBButton">
       <Properties>
@@ -114,11 +183,6 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="optionBButtonActionPerformed"/>
       </Events>
-      <Constraints>
-        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="842" y="331" width="-1" height="48"/>
-        </Constraint>
-      </Constraints>
     </Component>
     <Component class="javax.swing.JRadioButton" name="optionCButton">
       <Properties>
@@ -130,11 +194,6 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="optionCButtonActionPerformed"/>
       </Events>
-      <Constraints>
-        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="314" y="481" width="-1" height="45"/>
-        </Constraint>
-      </Constraints>
     </Component>
     <Component class="javax.swing.JRadioButton" name="optionAButton">
       <Properties>
@@ -148,11 +207,6 @@
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="optionAButtonMouseClicked"/>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="optionAButtonActionPerformed"/>
       </Events>
-      <Constraints>
-        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="314" y="331" width="-1" height="48"/>
-        </Constraint>
-      </Constraints>
     </Component>
     <Component class="javax.swing.JRadioButton" name="optionDButton">
       <Properties>
@@ -164,21 +218,11 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="optionDButtonActionPerformed"/>
       </Events>
-      <Constraints>
-        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="850" y="470" width="98" height="30"/>
-        </Constraint>
-      </Constraints>
     </Component>
     <Component class="javax.swing.JLabel" name="scoreLabel">
       <Properties>
         <Property name="text" type="java.lang.String" value="Score: "/>
       </Properties>
-      <Constraints>
-        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="963" y="69" width="268" height="63"/>
-        </Constraint>
-      </Constraints>
     </Component>
     <Component class="javax.swing.JButton" name="lockButton">
       <Properties>
@@ -193,11 +237,6 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="lockButtonActionPerformed"/>
       </Events>
-      <Constraints>
-        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="320" y="580" width="-1" height="-1"/>
-        </Constraint>
-      </Constraints>
     </Component>
     <Component class="javax.swing.JLabel" name="answerValidityLabel">
       <Properties>
@@ -206,11 +245,6 @@
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
       </Properties>
-      <Constraints>
-        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="537" y="635" width="234" height="69"/>
-        </Constraint>
-      </Constraints>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
@@ -220,11 +254,6 @@
         </Property>
         <Property name="text" type="java.lang.String" value="jLabel1"/>
       </Properties>
-      <Constraints>
-        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="0" y="0" width="1250" height="730"/>
-        </Constraint>
-      </Constraints>
     </Component>
   </SubComponents>
 </Form>
