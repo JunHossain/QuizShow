@@ -5,6 +5,13 @@ How many days are there in a year?
 465
 365
 
+Which of the following is used to store data even when the computer is turned off?
+RAM
+ROM
+CPU
+GPU
+ROM
+
 What is the capital city of France?
 London
 Paris
@@ -12,12 +19,33 @@ Rome
 Berlin
 Paris
 
+What does CPU stand for?
+Central Processing Unit
+Computer Processing Unit
+Central Power Unit
+Computer Power Unit
+Central Processing Unit
+
+What is the result of 9 multiplied by 7?
+54
+63
+72
+81
+63
+
 How many Continents are there?
 4
 5
 9
 7
 7
+
+Which of the following is not a programming language?
+Python
+Java
+HTML
+Excel
+Excel
 
 How many months have 31 days?
 3
@@ -54,6 +82,20 @@ CO2.
 NaCl
 H2O
 
+If a pizza is cut into 8 equal slices and 3 slices are eaten, how many slices are left?
+2
+3
+4
+5
+5
+
+What is the next number in the sequence: 2, 4, 6, 8, ___?
+9
+10
+11
+12
+10
+
 Which country is known as the Land of the Rising Sun? 
 Nepal
 France
@@ -61,9 +103,107 @@ Japan
 China
 Japan
 
+How many sides does a triangle have?
+2
+3
+4
+5
+3
+
+What type of device is a computer mouse?
+Input device
+Output device
+Storage device
+Processing device
+Input device
+
+What is the square root of 25?
+4
+5
+6
+7
+5
+
+Which number is the odd one out: 3, 7, 11, 14, 19?
+3
+14
+7
+11
+14
+
 How many colors are in the Rainbow?
 7
 10
 13
 5
 7
+
+What is 10 + 5?
+15
+12
+14
+2
+15
+
+Which of the following is a renewable energy source?
+Coal
+Natural Gas
+Solar
+Petroleum
+Solar
+
+If a rectangle has a length of 8 units and a width of 4 units, what is its area?
+12 square units
+16 square units
+24 square units
+32 square units
+32 square units
+
+If you have 3 apples and you buy 5 more, how many apples do you have in total?
+6
+7
+8
+9
+8
+
+How many sides does a square have?
+2
+3
+4
+5
+4
+
+If you rearrange the letters "CIFAIPC" you would get the name of a:
+Country
+Ocean
+Animal
+City
+Ocean
+
+What is 20% of 50?
+5
+10
+15
+20
+10
+
+What is the main function of the lungs?
+Pump blood
+Digest food
+Filter waste
+Exchange oxygen and carbon dioxide
+Exchange oxygen and carbon dioxide
+
+Which of the following is a popular web browser?
+Microsoft Word
+Google Chrome
+Adobe Photoshop
+Microsoft Excel
+Google Chrome
+
+What is the square root of 16?
+5
+6
+4
+7
+4

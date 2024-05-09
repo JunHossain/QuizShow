@@ -7,14 +7,13 @@ package org.example.uap;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.List;
 import java.util.Random;
 
 /**
  * @author User
  */
 public class Question {
-    private final int[] numbers = {1, 8, 15, 22, 29, 36, 43, 50, 57, 64};
+    private final int[] numbers = {1,8,15,22,29,36,43,50,57,64,71,78,85,92,99,106,113,120,127,134,141,148,155,162,169,176,183,190,197,204};
     private int randomIndex;
     private int lineNumber;
 

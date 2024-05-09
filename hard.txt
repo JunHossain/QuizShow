@@ -1,16 +1,16 @@
-In the context of digital computer, which of the following pairs of digits is referred to as binary code ?
+In the context of digital computer, which of the following pairs of digits is referred to as binary code?
 3 and 4
 0 and 1
 2 and 3
 1 and 2
 0 and 1
 
-What is the full form of PROM ?
+What is the full form of PROM?
 Program read-only memory
-Primary read-only memory 
-Programmable read-only memory 
-Program read-output memory 
-Programmable read-only memory 
+Primary read-only memory
+Programmable read-only memory
+Program read-output memory
+Programmable read-only memory
 
 What is the chemical formula for the compound commonly known as baking soda?
 NaOH
@@ -33,6 +33,34 @@ Microsoft
 Apple
 Intel
 
+What is the result of 5³ - 4² + 6?
+281
+183
+115
+85
+115
+
+Who is often credited with the invention of the first mechanical computer, known as the Analytical Engine?
+Charles Babbage
+Alan Turing
+Ada Lovelace
+John von Neumann
+Charles Babbage
+
+What is the term for the study of the Earth's atmosphere and weather patterns?
+Meteorology
+Geology
+Climatology
+Seismology
+Meteorology
+
+What is the value of the mathematical constant "e" (Euler's number) rounded to two decimal places?
+3.71
+2.72
+4.73
+1.70
+2.72
+
 Which country has the highest population density in the world?
 Monaco
 Singapore
@@ -46,6 +74,13 @@ Parliament
 Supreme Court
 Ministry of Home Affairs
 Election Commission
+
+What is the term for a computer program designed to replicate itself and spread to other computers?
+Virus
+Worm
+Trojan horse
+Malware
+Worm
 
 What is the value of the mathematical constant "π" rounded to 10 decimal places?
 3.1415926535
@@ -67,4 +102,109 @@ Sweden
 Norway
 Denmark
 Finland
+
+What is the term for the phenomenon where a person's blood pressure suddenly drops when they stand up from a sitting or lying position?
+Orthostatic hypotension
+Syncope
+Vasovagal response
+Postural hypotension
+Orthostatic hypotension
+
+Which gas is essential for respiration in humans and other animals?
+Oxygen
+Carbon dioxide
+Nitrogen
+Hydrogen
+Oxygen
+
+What is the chemical symbol for the element potassium?
+Pt
+K
+Po
+Kr
+K
+
+What is the term for a material that does not allow electricity to flow through it easily?
+Insulator
+Conductor
+Semiconductor
+Resistor
+Insulator
+
+Which planet is known as the "Red Planet"?
+Mars
+Venus
+Jupiter
+Mercury
+Mars
+
+Who is credited with inventing the World Wide Web?
+Tim Berners-Lee
+Bill Gates
+Steve Jobs
+Mark Zuckerberg
+Tim Berners-Lee
+
+What is the name of the highest-ranking card in a deck of playing cards?
+Ace
+King
+Queen
+Joker
+Ace
+
+In the game of Monopoly, what color are the properties on the second side of the board?
+Green
+Yellow
+Blue
+Red
+Yellow
+
+How many cards are there in a standard deck of Uno cards?
+52
+54
+108
+112
+108
+
+In which classic board game would you find a "Get Out of Jail Free" card?
+Monopoly
+Scrabble
+Clue
+Risk
+Monopoly
+
+In the game of Checkers, how many pieces does each player start with?
+12
+16
+20
+24
+16
+
+What is the name of the Italian plumber who is the main character in the Super Mario video game series?
+Mario
+Luigi
+Wario
+Yoshi
+Mario
+
+How many houses can you build on a single property in the game of Monopoly?
+1
+2
+3
+4
+4
+
+What is the largest mammal in the world?
+Blue Whale
+African Elephant
+Giraffe
+Polar Bear
+Blue Whale
+
+If a triangle has sides of lengths 3 cm, 4 cm, and 5 cm, what type of triangle is it?
+Equilateral
+Isosceles
+Scalene
+Right-angled
+Right-angled
 

@@ -5,12 +5,33 @@ Galileo Galilei
 Nikola Tesla
 Albert Einstein
 
-In the context of computing, a byte is equal to _____ bits?
+What is the value of 3x - 7 when x = 5?
+8
+12
+13
+14
+8
+
+In the context of computing, a byte is equal to _____ bits ?
 4
 16
 24
 8
 8
+
+What is the square root of 144?
+10
+12
+14
+16
+12
+
+If a clock shows 3:30 PM, how many degrees will the hour hand have turned since noon?
+90 degrees
+120 degrees
+135 degrees
+180 degrees
+90 degrees
 
 In what year did the Titanic sink?
 1912
@@ -19,12 +40,40 @@ In what year did the Titanic sink?
 1898
 1912
 
+Which number does not belong in the following series: 3, 5, 7, 9, 11, 12, 13?
+5
+9
+12
+13
+12
+
+If a train travels at 60 miles per hour, how far will it travel in 3 hours?
+120 miles
+160 miles
+180 miles
+200 miles
+180 miles
+
 Which of the following devices is NOT used to enter data into a computer ?
 Mouse
 Keyboard
 Scanner
 Monitor
 Monitor
+
+What is the result of (4 + 5) * (7 - 3)?
+16
+28
+36
+48
+36
+
+Who painted the Mona Lisa?
+Leonardo da Vinci
+Vincent van Gogh
+Pablo Picasso
+Michelangelo
+Leonardo da Vinci
 
 What is the smallest bone in the human body?
 Stapes
@@ -33,12 +82,33 @@ Tibia
 Fibula
 Stapes
 
+What does HTML stand for?
+Hyperlinks and Text Markup Language
+Hypertext Markup Language
+Hyperlinks Text Management Language
+Hypertext Management Language
+Hypertext Markup Language
+
 What is the world's largest ocean?
 Pacific Ocean
 Atlantic Ocean
 Indian Ocean
 Arctic Ocean
 Pacific Ocean
+
+What is the perimeter of a square with a side length of 10 meters?
+20 meters
+30 meters
+40 meters
+50 meters
+40 meters
+
+Who wrote the famous play "Romeo and Juliet"?
+William Shakespeare
+Charles Dickens
+Jane Austen
+Mark Twain
+William Shakespeare
 
 What is the full form of WWW?
 World Working Web
@@ -54,6 +124,20 @@ Kanchenjunga
 Lhotse
 Mount Everest
 
+What is the chemical symbol for iron?
+Fe
+Ir
+In
+Io
+Fe
+
+Which of the following is a common file format for images?
+MP3
+PDF
+JPG
+TXT
+JPG
+
 Who was the first woman to win a Nobel Prize?
 Marie Curie
 Rosa Parks
@@ -61,9 +145,65 @@ Mother Teresa
 Amelia Earhart
 Marie Curie
 
+Which of the following numbers is the smallest: -1, -0.5, -2, -0.2?
+-1
+-0.5
+-2
+-0.2
+-2
+
+If all cats are mammals and some mammals are black, can we conclude that all cats are black?
+Yes
+No
+Maybe
+It depends
+No
+
+What is the unit of measurement for electrical resistance?
+Ampere
+Ohm
+Volt
+Watt
+Ohm
+
+What type of energy is stored in food?
+Kinetic energy
+Thermal energy
+Potential energy
+Chemical energy
+Chemical energy
+
+Which of the following is not a primary color of light?
+Red
+Blue
+Yellow
+Green
+Yellow
+
+What is the unit of measurement for force?
+Joule
+Newton
+Watt
+Kilogram
+Newton
+
 Which planet is known as the "Morning Star" or "Evening Star"?
 Venus
 Mars
 Jupiter
 Mercury
 Venus
+
+Who painted the famous artwork "Starry Night"?
+Vincent van Gogh
+Pablo Picasso
+Leonardo da Vinci
+Claude Monet
+Vincent van Gogh
+
+Which of the following is a greenhouse gas?
+Oxygen
+Nitrogen
+Carbon dioxide
+Helium
+Carbon dioxide

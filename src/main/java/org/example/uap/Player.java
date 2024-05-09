@@ -10,14 +10,14 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author User
+ * @author user
  */
 public class Player extends javax.swing.JFrame {
 
     /**
      * Creates new form Player
      */
-
+    
     public String playerName;
     public Player() {
         initComponents();
@@ -37,18 +37,15 @@ public class Player extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        welcomingText = new javax.swing.JLabel();
         nameBox = new javax.swing.JTextField();
         nextButton = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
+        welcomeText = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        welcomingText.setFont(new java.awt.Font("Algerian", 0, 24)); // NOI18N
-        welcomingText.setForeground(new java.awt.Color(51, 51, 51));
-        welcomingText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        welcomingText.setText("Insert Name");
-
+        nameBox.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        nameBox.setForeground(new java.awt.Color(51, 51, 51));
         nameBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nameBoxActionPerformed(evt);
@@ -65,46 +62,49 @@ public class Player extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/v915-mynt-005.jpg"))); // NOI18N
-        jLabel3.setText("jLabel3");
-        jLabel3.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        welcomeText.setFont(new java.awt.Font("Algerian", 0, 24)); // NOI18N
+        welcomeText.setForeground(new java.awt.Color(51, 51, 51));
+        welcomeText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        welcomeText.setText("Insert Name");
+
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/v915-mynt-005.jpg"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        jLabel1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(190, 190, 190)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(nameBox, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(welcomingText, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(130, 130, 130)
+                .addComponent(nameBox, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(650, 650, 650)
-                .addComponent(nextButton, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 790, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(560, 560, 560)
+                .addComponent(nextButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(120, 120, 120)
+                .addComponent(welcomeText, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 720, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(190, 190, 190)
+                .addComponent(nameBox, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(180, 180, 180)
+                .addComponent(nextButton))
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(140, 140, 140)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addComponent(nameBox, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(welcomingText, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(72, 72, 72)
-                .addComponent(nextButton, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(welcomeText, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -126,7 +126,9 @@ public class Player extends javax.swing.JFrame {
         }else{
             playerName = nameBox.getText().trim();
             this.dispose();
-            new Difficulty(playerName).setVisible(true);
+            Difficulty difficulty = new Difficulty(playerName);
+            difficulty.setLocationRelativeTo(null);
+            difficulty.setVisible(true);
         }
     }//GEN-LAST:event_nextButtonActionPerformed
 
@@ -166,10 +168,10 @@ public class Player extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField nameBox;
     private javax.swing.JButton nextButton;
-    private javax.swing.JLabel welcomingText;
+    private javax.swing.JLabel welcomeText;
     // End of variables declaration//GEN-END:variables
 }
